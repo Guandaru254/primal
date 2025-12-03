@@ -7,11 +7,12 @@ export default function IntroductionSection() {
   return (
     <section className="intro-wrapper">
       <div className="intro-container">
-        {/* LEFT IMAGE + GOAL BOX */}
+        
+        {/* LEFT SECTION */}
         <div className="intro-left">
           <div className="intro-image">
             <Image
-              src="/assets/images/backgrounds/access.jpg"
+              src="/assets/images/backgrounds/hvac.png"
               alt="Facility Management Access Control"
               fill
               style={{ objectFit: "cover" }}
@@ -28,7 +29,7 @@ export default function IntroductionSection() {
           </div>
         </div>
 
-        {/* RIGHT CONTENT */}
+        {/* RIGHT SECTION */}
         <div className="intro-right">
           <p className="intro-sub">OUR INTRODUCTION</p>
 
@@ -51,8 +52,8 @@ export default function IntroductionSection() {
               <div>
                 <h4>Fast Response & Efficient Services</h4>
                 <p>
-                  We offer a full range of facility management services designed to
-                  keep your property running smoothly.
+                  We offer a full range of facility management services 
+                  designed to keep your property running smoothly.
                 </p>
               </div>
             </div>
@@ -69,8 +70,8 @@ export default function IntroductionSection() {
               <div>
                 <h4>Experienced & Certified Technicians</h4>
                 <p>
-                  Our technicians are trained, certified, and experienced in a wide
-                  range of facility management tasks.
+                  Our technicians are trained, certified, and experienced 
+                  in a wide range of facility management tasks.
                 </p>
               </div>
             </div>

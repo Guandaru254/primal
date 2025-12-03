@@ -5,7 +5,7 @@ import "./Services.css";
 
 const services = [
   {
-    image: "/assets/images/services/hvac.jpg",
+    image: "/assets/images/backgrounds/hvac.png",
     icon: "/assets/icons/hvac.svg",
     title: "HVAC Maintenance & Repair",
     text: "Servicing and maintaining air conditioning, ventilation, and refrigeration systems for optimal efficiency.",
