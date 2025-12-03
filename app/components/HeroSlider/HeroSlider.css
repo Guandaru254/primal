@@ -1,0 +1,168 @@
+/* -----------------------------------------
+   HERO SLIDER — FIXNIX THEME (Modernized)
+------------------------------------------ */
+
+.hero-slider-container {
+  width: 100%;
+  height: 100vh;                 /* Full screen height */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Swiper wrapper */
+.hero-swiper {
+  width: 100%;
+  height: 100%;
+}
+
+/* -----------------------------------------
+   SLIDE BACKGROUND IMAGE
+------------------------------------------ */
+.hero-slide-bg {
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+/* Dark overlay for readability */
+.hero-slide-bg::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 20, 30, 0.55); /* Fixnix original tone */
+  z-index: 1;
+}
+
+/* -----------------------------------------
+   TEXT CONTENT
+------------------------------------------ */
+.hero-content {
+  position: absolute;
+  top: 55%;
+  left: 7%;
+  transform: translateY(-50%);
+  z-index: 10;
+  color: #fff;
+  max-width: 600px;      /* Prevent long text overflow */
+}
+
+/* Main Title */
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  max-width: 550px;       /* SAFE WRAP LIMIT */
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+/* Subtitle */
+.hero-subtitle {
+  font-size: 1.25rem;
+  line-height: 1.4;
+  opacity: 0.95;
+  margin-bottom: 30px;
+  max-width: 500px;
+}
+
+/* -----------------------------------------
+   BUTTON STYLE
+------------------------------------------ */
+.hero-btn {
+  display: inline-block;
+  background: #0d99ff;      /* Fixnix Blue */
+  padding: 15px 32px;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.hero-btn:hover {
+  background: #0077cc;
+}
+
+/* -----------------------------------------
+   NAVIGATION ARROWS (Fixnix Style)
+------------------------------------------ */
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #ffffff !important;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(6px);
+  transition: 0.3s;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* Position like original Fixnix slider */
+.swiper-button-next {
+  right: 30px;
+}
+.swiper-button-prev {
+  left: 30px;
+}
+
+/* -----------------------------------------
+   RESPONSIVE
+------------------------------------------ */
+
+/* Tablets */
+@media (max-width: 992px) {
+  .hero-title {
+    font-size: 2.7rem;
+    max-width: 480px;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .hero-content {
+    top: 60%;
+    left: 6%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .hero-title {
+    font-size: 2.1rem;
+    max-width: 90%;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-btn {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 40px;
+    height: 40px;
+  }
+}

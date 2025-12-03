@@ -1,0 +1,33 @@
+.about-hero {
+  background-image: url("/assets/images/backgrounds/hvac.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 55vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 14, 30, 0.6);
+}
+
+.about-hero-content {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.about-hero-content h1 {
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.about-hero-content p {
+  margin-top: 10px;
+  font-size: 18px;
+  opacity: 0.9;
+}

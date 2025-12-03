@@ -1,0 +1,69 @@
+/* SECTION BACKGROUND */
+.stats-section {
+  padding: 90px 0;
+  background: url("/assets/images/backgrounds/stats-bg.jpg") center/cover no-repeat;
+  position: relative;
+  z-index: 1;
+}
+
+/* Dark overlay to match premium vibe */
+.stats-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(38, 89, 120, 0.8);
+  z-index: -1;
+}
+
+/* CONTAINER */
+.stats-container {
+  max-width: 1250px;
+  width: 90%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  text-align: center;
+}
+
+/* CARD */
+.stat-card {
+  color: #fff;
+  padding: 20px;
+}
+
+.stat-icon img {
+  filter: brightness(0) invert(1);
+  opacity: 0.9;
+  margin-bottom: 15px;
+}
+
+/* NUMBER */
+.stat-number {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+/* LABEL */
+.stat-label {
+  font-size: 18px;
+  opacity: 0.85;
+  font-weight: 500;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .stats-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .stats-container {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-number {
+    font-size: 36px;
+  }
+}

@@ -1,0 +1,273 @@
+/* ----------------------------------------------------
+   BASE PAGE
+---------------------------------------------------- */
+.contact-page {
+  padding-top: 120px;
+  background: #f5f7fb;
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+}
+
+/* ----------------------------------------------------
+   HERO SECTION
+---------------------------------------------------- */
+.contact-hero {
+  background: white;
+  padding: 70px 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.contact-hero-inner {
+  max-width: 1250px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.contact-hero-left {
+  width: 50%;
+}
+
+.contact-eyebrow {
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #4fb3ff;
+  margin-bottom: 10px;
+}
+
+.contact-hero-left h1 {
+  font-size: 46px;
+  line-height: 1.2;
+  font-weight: 800;
+  color: #0f1c2e;
+  margin-bottom: 15px;
+}
+
+.contact-hero-left p {
+  font-size: 18px;
+  color: #475569;
+  margin-bottom: 25px;
+}
+
+.contact-details p {
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #334155;
+}
+
+.contact-hero-right {
+  width: 50%;
+  height: 380px;
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.contact-hero-img {
+  object-fit: cover;
+}
+
+/* ----------------------------------------------------
+   MAIN CONTACT FORM
+---------------------------------------------------- */
+.contact-form-section {
+  max-width: 900px;
+  margin: 70px auto;
+  background: white;
+  padding: 45px;
+  border-radius: 18px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+}
+
+.contact-form-section h2 {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.contact-form-section p {
+  color: #475569;
+  margin-bottom: 25px;
+}
+
+/* Form Layout */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.form-row input {
+  flex: 1;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: 1px solid #d4dbe5;
+  background: #f9fbfd;
+  font-size: 16px;
+  transition: 0.2s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #4fb3ff;
+  background: #ffffff;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(79, 179, 255, 0.25);
+}
+
+/* Submit Button */
+.contact-submit-btn {
+  margin-top: 10px;
+  background: #007aff;
+  color: white;
+  padding: 14px 22px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.contact-submit-btn:hover {
+  background: #005fcc;
+}
+
+/* ----------------------------------------------------
+   INSTANT QUOTE FORM
+---------------------------------------------------- */
+.instant-quote-section {
+  max-width: 900px;
+  margin: 60px auto;
+}
+
+.instant-quote-card {
+  background: #0f1c2e;
+  padding: 45px;
+  border-radius: 18px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.instant-quote-card::before {
+  content: "";
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 220px;
+  height: 220px;
+  background: #1e2b3d;
+  border-radius: 50%;
+  opacity: 0.4;
+}
+
+.instant-quote-card h2 {
+  font-size: 30px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.instant-quote-card p {
+  margin-bottom: 20px;
+  color: #d1e1f7;
+}
+
+/* Quote Form */
+.instant-quote-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.quote-row {
+  display: flex;
+  gap: 20px;
+}
+
+.instant-quote-form input,
+.instant-quote-form select,
+.instant-quote-form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+  background: #fff;
+  color: #0f1c2e;
+}
+
+.instant-quote-form select {
+  cursor: pointer;
+}
+
+/* Submit Button */
+.instant-quote-btn {
+  margin-top: 5px;
+  width: max-content;
+  background: #4fb3ff;
+  color: #0f1c2e;
+  padding: 14px 24px;
+  font-weight: 800;
+  border-radius: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.instant-quote-btn:hover {
+  background: #62c3ff;
+}
+
+/* ----------------------------------------------------
+   MAP SECTION
+---------------------------------------------------- */
+.contact-map iframe {
+  margin-top: 50px;
+  border: none;
+  border-radius: 12px;
+}
+
+/* ----------------------------------------------------
+   RESPONSIVE
+---------------------------------------------------- */
+@media (max-width: 992px) {
+  .contact-hero-inner {
+    flex-direction: column;
+  }
+
+  .contact-hero-left,
+  .contact-hero-right {
+    width: 100%;
+  }
+
+  .form-row,
+  .quote-row {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-hero-left h1 {
+    font-size: 34px;
+  }
+
+  .contact-form-section,
+  .instant-quote-card {
+    padding: 30px;
+  }
+}

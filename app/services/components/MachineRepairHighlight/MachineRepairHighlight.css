@@ -1,0 +1,133 @@
+.machine-section {
+  padding: 90px 0 70px;
+  background: #f8faff;
+}
+
+.machine-section__tag {
+  display: inline-block;
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #003c87;
+  background: #e1ecff;
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin-bottom: 15px;
+}
+
+.machine-section__title {
+  font-size: 34px;
+  font-weight: 800;
+  color: #1f2733;
+  margin-bottom: 15px;
+}
+
+.machine-section__intro {
+  font-size: 16px;
+  color: #505b6a;
+  margin-bottom: 25px;
+}
+
+.machine-section__columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 30px;
+  margin-bottom: 25px;
+}
+
+.machine-section__columns ul {
+  padding-left: 18px;
+  margin: 0;
+}
+
+.machine-section__columns li {
+  font-size: 15px;
+  color: #2e3745;
+  margin-bottom: 6px;
+}
+
+.machine-section__cta-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.machine-section__btn {
+  display: inline-block;
+  background: #003c87;
+  color: #ffffff;
+  padding: 10px 26px;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.machine-section__btn:hover {
+  background: #012d63;
+}
+
+.machine-section__note {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* Right image */
+.machine-section__image-wrapper {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.machine-section__image {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.machine-section__badge {
+  position: absolute;
+  left: 18px;
+  bottom: 18px;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+}
+
+.machine-section__badge-number {
+  font-size: 26px;
+  font-weight: 800;
+  color: #003c87;
+}
+
+.machine-section__badge-text {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #4b5563;
+}
+
+/* Mobile */
+@media (max-width: 991px) {
+  .machine-section {
+    padding: 60px 0;
+  }
+
+  .machine-section__columns {
+    grid-template-columns: 1fr;
+  }
+
+  .machine-section__title {
+    font-size: 28px;
+  }
+
+  .machine-section__image-wrapper {
+    margin-top: 25px;
+  }
+}

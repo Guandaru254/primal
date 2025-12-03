@@ -1,0 +1,35 @@
+.services-seo {
+  padding: 70px 0 90px;
+  background: #f3f4f7;
+}
+
+.services-seo h2 {
+  font-size: 28px;
+  font-weight: 800;
+  color: #1f2933;
+  margin-bottom: 16px;
+}
+
+.services-seo h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1f2933;
+  margin-bottom: 12px;
+}
+
+.services-seo p {
+  font-size: 15px;
+  color: #4b5563;
+  margin-bottom: 14px;
+}
+
+.services-seo__list {
+  padding-left: 18px;
+  margin: 0;
+}
+
+.services-seo__list li {
+  font-size: 15px;
+  color: #4b5563;
+  margin-bottom: 7px;
+}
