@@ -1,5 +1,5 @@
 /* --------------------------------------------------
-   GLOBAL SLUG PAGE WRAPPER
+   GLOBAL
 -------------------------------------------------- */
 .service-single-page {
   padding-top: 130px;
@@ -28,90 +28,75 @@
   font-weight: 600;
 }
 
-.breadcrumbs span {
-  color: #94a3b8;
-}
-
 .breadcrumbs .current {
   font-weight: 700;
   color: #1e293b;
 }
 
 /* --------------------------------------------------
-   HERO LAYOUT
+   HERO SECTION
 -------------------------------------------------- */
 .service-single-hero {
   max-width: 1250px;
   margin: auto;
   padding: 70px 25px;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 45px;
+  gap: 60px;
+  align-items: flex-start; /* prevents overlap */
 }
 
 .hero-left {
   flex: 1;
+  max-width: 600px;
 }
 
 .hero-kicker {
   color: #0ea5e9;
   text-transform: uppercase;
-  letter-spacing: 0.6px;
   font-weight: 700;
-  margin-bottom: 10px;
-  font-size: 0.95rem;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
 }
 
 .hero-left h1 {
-  font-size: 46px;
+  font-size: 42px;
   font-weight: 800;
-  line-height: 1.15;
   color: #0f172a;
-  margin-bottom: 18px;
+  line-height: 1.15;
+  max-width: 520px; /* prevents title from running too wide */
+  margin-bottom: 15px;
 }
 
 .hero-subtitle {
-  font-size: 18px;
+  font-size: 17px;
   color: #475569;
-  line-height: 1.55;
-  margin-bottom: 25px;
-}
-
-/* BULLETS */
-.hero-bullets {
-  margin-top: 12px;
-  margin-bottom: 15px;
+  line-height: 1.5;
+  margin-bottom: 20px;
 }
 
 .hero-bullets li {
   color: #334155;
-  font-size: 16px;
   margin-bottom: 10px;
-  padding-left: 18px;
+  padding-left: 20px;
   position: relative;
 }
 
 .hero-bullets li::before {
   content: "•";
-  color: #0ea5e9;
   position: absolute;
   left: 0;
-  top: 0;
-  font-weight: bold;
+  color: #0ea5e9;
 }
 
-/* CTA BUTTON */
 .hero-btn {
   display: inline-block;
-  margin-top: 25px;
   background: #007aff;
-  padding: 14px 32px;
-  border-radius: 10px;
   color: white;
+  padding: 13px 30px;
+  border-radius: 10px;
   font-weight: 700;
-  font-size: 16px;
-  transition: 0.2s;
+  margin-top: 20px;
+  text-decoration: none;
 }
 
 .hero-btn:hover {
@@ -121,11 +106,12 @@
 /* RIGHT IMAGE */
 .hero-right {
   flex: 1;
+  max-width: 520px;
   height: 380px;
+  position: relative;
   border-radius: 22px;
   overflow: hidden;
-  position: relative;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
 
 .hero-img {
@@ -133,11 +119,11 @@
 }
 
 /* --------------------------------------------------
-   KEYWORD TAGS
+   KEYWORDS
 -------------------------------------------------- */
 .service-keywords {
   max-width: 1250px;
-  margin: 20px auto 40px;
+  margin: 25px auto 40px;
   padding: 0 25px;
   display: flex;
   flex-wrap: wrap;
@@ -148,42 +134,33 @@
   background: #e0f0ff;
   padding: 8px 18px;
   border-radius: 30px;
-  font-size: 14px;
-  color: #0f62ce;
   border: 1px solid #c4e0ff;
-  font-weight: 500;
+  color: #1663c7;
+  font-size: 14px;
 }
 
 /* --------------------------------------------------
-   OFFER SECTION
+   OFFER BOXES
 -------------------------------------------------- */
 .offer-box {
   max-width: 1250px;
   margin: 40px auto;
-  padding: 40px 30px;
   background: white;
+  padding: 40px;
   border-radius: 18px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+  box-shadow: 0 10px 26px rgba(0,0,0,0.05);
 }
 
 .offer-box h2 {
-  font-size: 32px;
+  font-size: 30px;
   font-weight: 800;
   margin-bottom: 20px;
-  color: #0f172a;
-}
-
-.offer-box p {
-  color: #475569;
-  margin-bottom: 20px;
-  line-height: 1.6;
 }
 
 .offer-list li {
   margin-bottom: 12px;
   color: #334155;
-  font-size: 16px;
-  padding-left: 20px;
+  padding-left: 22px;
   position: relative;
 }
 
@@ -192,49 +169,41 @@
   position: absolute;
   left: 0;
   color: #0ea5e9;
-  font-weight: 700;
+  font-weight: bold;
 }
 
 /* --------------------------------------------------
-   FAQ SECTION
+   FAQ
 -------------------------------------------------- */
 .service-faq {
   max-width: 1250px;
   margin: 60px auto;
-  padding: 0 25px 40px;
+  padding: 0 25px;
 }
 
 .service-faq h2 {
   font-size: 30px;
   font-weight: 800;
   margin-bottom: 25px;
-  color: #0f172a;
 }
 
 .faq-item {
   background: white;
   padding: 18px 24px;
   border-radius: 14px;
-  margin-bottom: 14px;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.05);
-  transition: 0.15s ease;
-}
-
-.faq-item:hover {
-  transform: translateY(-2px);
+  margin-bottom: 15px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.05);
 }
 
 .faq-item summary {
-  font-weight: 700;
   font-size: 18px;
+  font-weight: 700;
   cursor: pointer;
-  color: #0f172a;
 }
 
 .faq-item p {
-  padding-top: 10px;
   color: #475569;
-  line-height: 1.55;
+  margin-top: 10px;
 }
 
 /* --------------------------------------------------
@@ -242,37 +211,26 @@
 -------------------------------------------------- */
 .detail-cta-box {
   max-width: 1250px;
-  margin: 40px auto 80px;
-  background: linear-gradient(135deg, #0ea5e9, #007aff);
+  margin: 50px auto 80px;
   padding: 45px;
   border-radius: 18px;
+  background: linear-gradient(135deg, #0ea5e9, #007aff);
   text-align: center;
   color: white;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-}
-
-.detail-cta-box h3 {
-  font-size: 28px;
-  margin-bottom: 10px;
-}
-
-.detail-cta-box p {
-  margin-bottom: 20px;
-  font-size: 17px;
 }
 
 .detail-cta-btn {
-  display: inline-block;
   background: white;
-  color: #0f62ce;
-  padding: 14px 30px;
-  border-radius: 8px;
+  color: #0070d8;
+  padding: 14px 28px;
+  border-radius: 10px;
   font-weight: 700;
-  transition: 0.2s;
+  display: inline-block;
+  text-decoration: none;
 }
 
 .detail-cta-btn:hover {
-  opacity: 0.85;
+  opacity: 0.9;
 }
 
 /* --------------------------------------------------
@@ -286,21 +244,20 @@
 
   .hero-right {
     width: 100%;
-    height: 310px;
+    height: 300px;
   }
 
-  .hero-left h1 {
-    font-size: 34px;
+  .hero-left {
+    max-width: 100%;
   }
 }
 
 @media (max-width: 600px) {
-  .offer-box,
-  .detail-cta-box {
-    padding: 30px 20px;
+  .offer-box {
+    padding: 28px;
   }
 
-  .hero-left h1 {
-    font-size: 30px;
+  .detail-cta-box {
+    padding: 30px;
   }
 }

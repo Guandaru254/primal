@@ -1,105 +1,96 @@
-// app/locations/page.tsx
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import "./locations.css";
 import { locations } from "@/lib/locations";
+import "./locations.css";
 
 export const metadata: Metadata = {
-  title: "Service Areas & Locations | Primal Facilities Management",
+  title: "Service Areas in Nairobi | Primal Facilities Management",
   description:
-    "Primal Facilities Management serves Nairobi (Westlands, Karen, Industrial Area, CBD and more) plus selected clients in Mombasa with repair, maintenance and facility services.",
+    "Explore Primal Facilities Management service areas across Nairobi: Kilimani, Westlands, Karen, Lavington, Parklands, Ngong Road, South B, South C, Lang’ata, Eastlands & more. Same-day technicians near you.",
+  openGraph: {
+    title: "Service Areas in Nairobi",
+    description:
+      "We provide fast, same-day facility and appliance services across all major Nairobi estates and neighbourhoods.",
+    images: ["/assets/images/backgrounds/kenya-map-overlay.jpg"],
+  },
 };
 
 export default function LocationsPage() {
   return (
-    <main className="locations-page">
-      {/* HERO */}
-      <section className="locations-hero">
-        <div className="locations-hero-inner">
-          <div className="locations-hero-content">
-            <p className="eyebrow">LOCATIONS</p>
+    <main className="locations-master-page">
+      {/* ULTRA MODERN HERO */}
+      <section className="loc-hero">
+        <div className="loc-hero-inner">
+          <div className="loc-hero-left">
+            <p className="loc-eyebrow">SERVICE LOCATIONS</p>
             <h1>
-              Service Coverage in <span>Nairobi & Beyond</span>
+              We Cover All Major <span>Nairobi Neighbourhoods</span>
             </h1>
-            <p className="hero-subtitle">
-              We focus on Nairobi’s key residential, commercial and industrial
-              hubs – with project-based support for selected clients across Kenya.
+            <p className="loc-hero-desc">
+              From Kilimani to Westlands, Karen to South B — our technicians
+              reach your home, business or apartment fast. Explore all our
+              service areas below.
             </p>
 
-            <div className="locations-badges">
-              <span>Nairobi – Westlands & CBD</span>
-              <span>Industrial Area & Mombasa Road</span>
-              <span>Karen, Ngong Road & Lang’ata</span>
-              <span>Mombasa (selected clients)</span>
+            <div className="loc-hero-tags">
+              <span>Same-Day Technicians</span>
+              <span>12 Nairobi Zones</span>
+              <span>90+ Appliances Repaired</span>
+              <span>For Homes & Businesses</span>
             </div>
           </div>
 
-          <div className="locations-hero-visual">
-            <div className="hero-map-card">
+          <div className="loc-hero-right">
+            <div className="loc-map-card">
               <Image
                 src="/assets/images/backgrounds/kenya-map-overlay.jpg"
-                alt="Primal FM service coverage map in Kenya"
+                alt="Nairobi location coverage"
                 fill
-                className="hero-map-image"
+                className="loc-map-img"
               />
-            </div>
-            <div className="hero-stat-card">
-              <p className="stat-label">Same-day in Nairobi*</p>
-              <p className="stat-value">Core Estates Covered</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* LOCATIONS LIST */}
-      <section className="locations-list-section">
-        <div className="locations-header">
-          <p className="eyebrow">WHERE WE WORK</p>
-          <h2>Key Service Areas</h2>
+      {/* GRID OF LOCATION CARDS */}
+      <section className="loc-grid-section">
+        <div className="loc-grid-header">
+          <p className="loc-eyebrow">WHERE WE OPERATE</p>
+          <h2>Our Nairobi Service Coverage</h2>
           <p>
-            Explore our main locations below. Each page explains the neighbourhoods
-            we cover, typical clients and the services available in that area.
+            Click any area to view full details, local estates, nearby
+            roads, landmarks and the services available in that neighbourhood.
           </p>
         </div>
 
-        <div className="locations-rows">
-          {locations.map((location, index) => (
-            <Link
-              key={location.slug}
-              href={`/locations/${location.slug}`}
-              className={`location-row ${index % 2 === 1 ? "reverse" : ""}`}
-            >
-              {/* IMAGE */}
-              <div className="location-image">
+        <div className="loc-grid">
+          {locations.map((loc) => (
+            <Link key={loc.slug} href={`/locations/${loc.slug}`} className="loc-card">
+              <div className="loc-card-image">
                 <Image
-                  src={location.heroImage}
-                  alt={location.name}
+                  src={loc.heroImage}
+                  alt={loc.name}
                   fill
-                  className="location-img"
+                  className="loc-card-img"
                 />
               </div>
 
-              {/* CONTENT */}
-              <div className="location-info">
-                <p className="location-city">{location.city}</p>
-                <h3>{location.name}</h3>
+              <div className="loc-card-body">
+                <p className="loc-city">{loc.city}</p>
+                <h3>{loc.name}</h3>
 
-                <p className="location-desc">{location.heroSubtitle}</p>
+                <p className="loc-snippet">{loc.heroSubtitle}</p>
 
-                <ul className="location-bullets">
-                  {location.serviceHighlights.slice(0, 3).map((item) => (
-                    <li key={item}>{item}</li>
+                <div className="loc-features">
+                  {loc.serviceHighlights.slice(0, 3).map((item) => (
+                    <span key={item}>{item}</span>
                   ))}
-                </ul>
+                </div>
 
-                <div className="location-footer">
-                  <span className="learn-more">View location details ↗</span>
-                  <div className="location-tags">
-                    {location.neighbourhoods.slice(0, 3).map((area) => (
-                      <span key={area}>{area}</span>
-                    ))}
-                  </div>
+                <div className="loc-footer">
+                  <span className="loc-cta">View Coverage ↗</span>
                 </div>
               </div>
             </Link>
