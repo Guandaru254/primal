@@ -39,7 +39,7 @@ export default function BlogPage() {
           <div className="blog-hero-text">
             <p className="blog-eyebrow">PRIMAL INSIGHTS</p>
             <h1 className="blog-hero-title">
-              Facilities &amp; <span>Maintenance Insights</span>
+     <span>Facilities &amp; Maintenance Insights</span>
             </h1>
             <p className="blog-hero-subtitle">
               Practical, Kenya-focused tips on washing machines, cold rooms,
