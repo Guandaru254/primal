@@ -43,7 +43,7 @@ export default function IntroductionSection() {
             <div className="feature-card">
               <div className="feature-icon">
                 <Image
-                  src="/assets/icons/fast.svg"
+                  src="/assets/icons/quality.svg"
                   alt="Fast Services"
                   width={40}
                   height={40}
@@ -61,7 +61,7 @@ export default function IntroductionSection() {
             <div className="feature-card">
               <div className="feature-icon">
                 <Image
-                  src="/assets/icons/certified.svg"
+                  src="/assets/icons/team.svg"
                   alt="Certified Technicians"
                   width={40}
                   height={40}

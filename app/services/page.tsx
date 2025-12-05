@@ -22,7 +22,7 @@ export default function ServicesPage() {
             <p className="eyebrow">SERVICES</p>
 
             <h1>
-              Our <span>Efficient Solutions</span>
+              <span>Our Efficient Solutions</span>
             </h1>
 
             <p className="hero-subtitle">
@@ -42,7 +42,7 @@ export default function ServicesPage() {
 
           <div className="hero-image-wrapper">
             <Image
-              src="/assets/images/backgrounds/laundry-service.jpg"
+              src="/assets/images/backgrounds/electrical-services.jpg"
               alt="Technician repairing laundry equipment"
               fill
               className="hero-image"

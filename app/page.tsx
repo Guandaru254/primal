@@ -15,7 +15,6 @@ export default function Home() {
       <WhyChooseUs />
       <Services />
       <Testimonials />
-      <Footer />
     </>
   );
 }

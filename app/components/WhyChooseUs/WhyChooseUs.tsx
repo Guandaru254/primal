@@ -25,7 +25,7 @@ export default function WhyChooseUs() {
 
           <div className="why-card">
             <div className="why-icon">
-              <Image src="/assets/icons/badge.svg" width={40} height={40} alt="Customer Satisfaction" />
+              <Image src="/assets/icons/customer.svg" width={40} height={40} alt="Customer Satisfaction" />
             </div>
             <h4>Commitment to Customer Satisfaction</h4>
             <p>
@@ -36,7 +36,7 @@ export default function WhyChooseUs() {
 
           <div className="why-card">
             <div className="why-icon">
-              <Image src="/assets/icons/solution.svg" width={40} height={40} alt="One Stop Solution" />
+              <Image src="/assets/icons/one-stop.svg" width={40} height={40} alt="One Stop Solution" />
             </div>
             <h4>One-Stop Solution for All Facility Needs</h4>
             <p>
@@ -47,7 +47,7 @@ export default function WhyChooseUs() {
 
           <div className="why-card">
             <div className="why-icon">
-              <Image src="/assets/icons/home.svg" width={40} height={40} alt="Trusted by Homes" />
+              <Image src="/assets/icons/trusted.svg" width={40} height={40} alt="Trusted by Homes" />
             </div>
             <h4>Trusted by Homes & Businesses</h4>
             <p>

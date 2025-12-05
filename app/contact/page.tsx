@@ -18,80 +18,120 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <main className="contact-page">
-
-      {/* ------------------------------------ */}
-      {/* HERO */}
-      {/* ------------------------------------ */}
+      {/* ---------------------------------------------------- */}
+      {/* HERO – IMAGE LEFT, TEXT RIGHT */}
+      {/* ---------------------------------------------------- */}
       <section className="contact-hero">
         <div className="contact-hero-inner">
-          <div className="contact-hero-left">
-            <p className="contact-eyebrow">CONTACT US</p>
-            <h1>We're Here to Assist You</h1>
-            <p>
-              Need repairs, installation or maintenance?  
-              Our Nairobi-based technicians are ready to help.
-            </p>
-
-            <div className="contact-details">
-              <p><strong>Phone:</strong> 0714 045 217</p>
-              <p><strong>Email:</strong> info@primalfacilitiesmanagement.co.ke</p>
-              <p><strong>Hours:</strong> Mon–Sat, 8am – 6pm</p>
+          {/* IMAGE SIDE */}
+          <div className="contact-hero-media">
+            <div className="contact-hero-media-inner">
+              <Image
+                src="/assets/images/services/electrician.jpg"
+                alt="Primal technician working on electrical panel"
+                fill
+                priority
+                className="contact-hero-img"
+              />
             </div>
           </div>
 
-          <div className="contact-hero-right">
-            <Image
-              src="/assets/images/backgrounds/contact.jpg"
-              alt="Contact Primal Facilities Management"
-              fill
-              className="contact-hero-img"
-            />
+          {/* TEXT SIDE */}
+          <div className="contact-hero-copy">
+            <p className="contact-eyebrow">CONTACT US</p>
+            <h1>We&apos;re Here to Assist You</h1>
+            <p className="contact-intro">
+              Need repairs, installation or maintenance? Our Nairobi-based
+              technicians are ready to help with same-day response across major
+              estates.
+            </p>
+
+            <div className="contact-details">
+              <p>
+                <strong>Phone:</strong>{" "}
+                <a href="tel:+254714045217">0714 045 217</a>
+              </p>
+              <p>
+                <strong>Email:</strong>{" "}
+                <a href="mailto:info@primalfacilitiesmanagement.co.ke">
+                  info@primalfacilitiesmanagement.co.ke
+                </a>
+              </p>
+              <p>
+                <strong>Hours:</strong> Mon–Sat, 8am – 6pm
+              </p>
+            </div>
+
+            <div className="contact-hero-badges">
+              <span>Same-Day Technicians</span>
+              <span>Nairobi & Surrounds</span>
+              <span>Residential & Commercial</span>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ------------------------------------ */}
+      {/* ---------------------------------------------------- */}
       {/* MAIN CONTACT FORM */}
-      {/* ------------------------------------ */}
+      {/* ---------------------------------------------------- */}
       <section className="contact-form-section">
-        <h2>Send Us a Message</h2>
-        <p>Our team will get back to you within minutes.</p>
+        <div className="contact-form-card">
+          <h2>Send Us a Message</h2>
+          <p>Your message will be responded to within minutes.</p>
 
-        <form
-          action="https://formsubmit.co/info@primalfacilitiesmanagement.co.ke"
-          method="POST"
-          className="contact-form"
-        >
-          <div className="form-row">
-            <input type="text" name="name" placeholder="Full Name" required />
-            <input type="text" name="phone" placeholder="Phone Number" required />
-          </div>
+          <form
+            action="https://formsubmit.co/info@primalfacilitiesmanagement.co.ke"
+            method="POST"
+            className="contact-form"
+          >
+            <div className="form-row">
+              <input type="text" name="name" placeholder="Full Name" required />
+              <input
+                type="text"
+                name="phone"
+                placeholder="Phone Number"
+                required
+              />
+            </div>
 
-          <div className="form-row">
-            <input type="email" name="email" placeholder="Email Address" required />
-            <input type="text" name="subject" placeholder="Subject" required />
-          </div>
+            <div className="form-row">
+              <input
+                type="email"
+                name="email"
+                placeholder="Email Address"
+                required
+              />
+              <input
+                type="text"
+                name="subject"
+                placeholder="Subject"
+                required
+              />
+            </div>
 
-          <textarea
-            name="message"
-            rows={6}
-            placeholder="Your message..."
-            required
-          ></textarea>
+            <textarea
+              name="message"
+              rows={6}
+              placeholder="Your message..."
+              required
+            ></textarea>
 
-          <button type="submit" className="contact-submit-btn">
-            Send Message →
-          </button>
-        </form>
+            <button type="submit" className="contact-submit-btn">
+              Send Message →
+            </button>
+          </form>
+        </div>
       </section>
 
-      {/* ------------------------------------ */}
-      {/* INSTANT QUOTE FORM (NEW) */}
-      {/* ------------------------------------ */}
+      {/* ---------------------------------------------------- */}
+      {/* INSTANT QUOTE FORM */}
+      {/* ---------------------------------------------------- */}
       <section className="instant-quote-section">
         <div className="instant-quote-card">
-          <h2>Get an Instant Quote</h2>
-          <p>Quick estimates for repairs, installations or maintenance.</p>
+          <div className="instant-quote-header">
+            <h2>Get an Instant Quote</h2>
+            <p>Quick estimates for repairs, installations or maintenance.</p>
+          </div>
 
           <form
             action="https://formsubmit.co/info@primalfacilitiesmanagement.co.ke"
@@ -99,20 +139,30 @@ export default function ContactPage() {
             className="instant-quote-form"
           >
             <div className="quote-row">
-              <input type="text" name="name" placeholder="Your Name" required />
-              <input type="text" name="phone" placeholder="Phone Number" required />
+              <input
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                required
+              />
+              <input
+                type="text"
+                name="phone"
+                placeholder="Phone Number"
+                required
+              />
             </div>
 
             <select name="service" required>
               <option value="">Select a Service</option>
-              <option>Washing Machine Repair</option>
+              <option>HVAC & Air Conditioning</option>
               <option>Fridge & Freezer Repair</option>
-              <option>Cold Room Installation & Repair</option>
-              <option>HVAC Maintenance</option>
-              <option>Industrial Machine Repair</option>
+              <option>Washing Machine Repair</option>
               <option>Electrical Services</option>
               <option>Plumbing Services</option>
+              <option>Cold Room Installation & Repair</option>
               <option>Commercial Laundry Equipment</option>
+              <option>Emergency Appliance Repair</option>
             </select>
 
             <textarea
@@ -129,20 +179,30 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* ------------------------------------ */}
-      {/* MAP */}
-      {/* ------------------------------------ */}
-      <section className="contact-map">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.13795556173!2d36.8219461!3d-1.2920659!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1733f5f3ac51%3A0xf1e683e4ad09b834!2sNairobi!5e0!3m2!1sen!2ske!4v1700000000000!5m2!1sen!2ske"
-          width="100%"
-          height="420"
-          style={{ border: 0 }}
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-        ></iframe>
-      </section>
+      {/* ---------------------------------------------------- */}
+      {/* MAP – MUTHITHI ROAD, WESTLANDS */}
+      {/* ---------------------------------------------------- */}
+      <section className="contact-map-section">
+        <div className="contact-map-inner">
+          <h2>Find Us in Westlands, Nairobi</h2>
+          <p>
+            Our technicians are based around Westlands — close to Muthithi Road
+            and key commercial hubs for fast dispatch across the city.
+          </p>
 
+          <div className="contact-map">
+            <iframe
+              src="https://www.google.com/maps?q=Muthithi%20Road%20Westlands%20Nairobi&output=embed"
+              width="100%"
+              height="420"
+              style={{ border: 0 }}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Primal FM - Muthithi Road Westlands"
+            ></iframe>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }

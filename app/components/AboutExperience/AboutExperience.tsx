@@ -14,7 +14,7 @@ export default function AboutExperience() {
 
           <div className="exp-item">
             <div className="exp-icon">
-              <img src="/assets/icons/quality.png" alt="Quality Services" />
+              <img src="/assets/icons/quality.svg" alt="Quality Services" />
             </div>
             <h3>Quality Services</h3>
             <p>
@@ -24,7 +24,7 @@ export default function AboutExperience() {
 
           <div className="exp-item">
             <div className="exp-icon">
-              <img src="/assets/icons/team.png" alt="Professional Team" />
+              <img src="/assets/icons/team.svg" alt="Professional Team" />
             </div>
             <h3>Professional Team</h3>
             <p>
@@ -34,7 +34,7 @@ export default function AboutExperience() {
 
           <div className="exp-item">
             <div className="exp-icon">
-              <img src="/assets/icons/support.png" alt="Support" />
+              <img src="/assets/icons/support.svg" alt="Support" />
             </div>
             <h3>Ongoing Support</h3>
             <p>

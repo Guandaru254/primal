@@ -6,19 +6,16 @@ import "./Services.css";
 const services = [
   {
     image: "/assets/images/backgrounds/hvac.png",
-    icon: "/assets/icons/hvac.svg",
     title: "HVAC Maintenance & Repair",
     text: "Servicing and maintaining air conditioning, ventilation, and refrigeration systems for optimal efficiency.",
   },
   {
-    image: "/assets/images/services/plumbing.jpg",
-    icon: "/assets/icons/plumbing.svg",
+    image: "/assets/images/services/electrician.jpg",
     title: "Electrical & Plumbing Services",
     text: "Expert installation, repair, and maintenance of electrical and plumbing systems.",
   },
   {
     image: "/assets/images/services/cleaning.jpg",
-    icon: "/assets/icons/cleaning.svg",
     title: "Cleaning & Janitorial Services",
     text: "High-quality cleaning services tailored to homes, offices, and commercial spaces.",
   },
@@ -50,15 +47,6 @@ export default function Services() {
                   className="service-image"
                 />
 
-                {/* Icon Overlay */}
-                <div className="service-icon">
-                  <Image
-                    src={service.icon}
-                    width={40}
-                    height={40}
-                    alt={service.title + ' icon'}
-                  />
-                </div>
               </div>
 
               <div className="service-content">
