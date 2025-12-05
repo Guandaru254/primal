@@ -100,7 +100,7 @@ export const services: Service[] = [
   {
     slug: "fridge-repair-nairobi",
     name: "Fridge & Freezer Repair in Nairobi",
-    heroImage: "/assets/images/services/fridge.jpg",
+    heroImage: "/assets/images/services/fridge.jpeg",
     shortDescription:
       "Same-day repair for fridges, freezers, cold rooms and chillers — domestic, commercial and industrial.",
 
@@ -362,7 +362,7 @@ export const services: Service[] = [
   {
     slug: "lpg-gas-installation-piping-nairobi",
     name: "LPG Gas Installation & Piping in Nairobi",
-    heroImage: "/assets/images/services/lpg-installation.jpg",
+    heroImage: "/assets/images/services/lpg.jpeg",
     shortDescription:
       "Safe LPG piping, gas line installation, compliance checks and leak testing for homes and commercial kitchens.",
 
@@ -418,7 +418,7 @@ export const services: Service[] = [
   {
     slug: "small-appliance-repair-nairobi",
     name: "Small Appliance Repair in Nairobi",
-    heroImage: "/assets/images/services/small-appliances.jpg",
+    heroImage: "/assets/images/services/appliance.jpeg",
     shortDescription:
       "Repair for blenders, coffee machines, kettles, water dispensers, air fryers and other kitchen appliances.",
 
@@ -477,7 +477,7 @@ export const services: Service[] = [
   {
     slug: "kitchen-appliance-repair-nairobi",
     name: "Kitchen Appliance Repair in Nairobi",
-    heroImage: "/assets/images/services/kitchen-appliances.jpg",
+    heroImage: "/assets/images/services/kitchen.jpeg",
     shortDescription:
       "Repair and servicing of cookers, ovens, microwaves, dishwashers, range hoods and all built-in appliances.",
 
@@ -541,7 +541,7 @@ export const services: Service[] = [
   {
     slug: "laundry-appliance-repair-nairobi",
     name: "Laundry Appliance Repair in Nairobi",
-    heroImage: "/assets/images/services/laundry.jpg",
+    heroImage: "/assets/images/services/washing.jpeg",
     shortDescription:
       "Repair for dryers, steam irons, garment steamers, washer-dryer combos and commercial laundry systems.",
 

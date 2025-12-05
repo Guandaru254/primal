@@ -7,26 +7,28 @@ import "./locations.css";
 export const metadata: Metadata = {
   title: "Service Areas in Nairobi | Primal Facilities Management",
   description:
-    "Explore Primal Facilities Management service areas across Nairobi: Kilimani, Westlands, Karen, Lavington, Parklands, Ngong Road, South B, South C, Lang’ata, Eastlands & more. Same-day technicians near you.",
+    "Explore Primal Facilities Management service areas across Nairobi: Kilimani, Westlands, Karen, Lavington, Parklands, South B, South C, Lang’ata, Eastlands & more.",
   openGraph: {
     title: "Service Areas in Nairobi",
     description:
       "We provide fast, same-day facility and appliance services across all major Nairobi estates and neighbourhoods.",
-    images: ["/assets/images/backgrounds/kenya-map-overlay.jpg"],
+    images: ["/assets/images/locations/nairobi.jpeg"],
   },
 };
 
 export default function LocationsPage() {
   return (
     <main className="locations-master-page">
-      {/* ULTRA MODERN HERO */}
+      {/* HERO */}
       <section className="loc-hero">
         <div className="loc-hero-inner">
           <div className="loc-hero-left">
             <p className="loc-eyebrow">SERVICE LOCATIONS</p>
+
             <h1>
-              We Cover All Major <span>Nairobi Neighbourhoods</span>
+              <span>We Cover All Major Nairobi Neighbourhoods</span>
             </h1>
+
             <p className="loc-hero-desc">
               From Kilimani to Westlands, Karen to South B — our technicians
               reach your home, business or apartment fast. Explore all our
@@ -35,7 +37,7 @@ export default function LocationsPage() {
 
             <div className="loc-hero-tags">
               <span>Same-Day Technicians</span>
-              <span>12 Nairobi Zones</span>
+              <span>20+ Nairobi Zones</span>
               <span>90+ Appliances Repaired</span>
               <span>For Homes & Businesses</span>
             </div>
@@ -44,8 +46,8 @@ export default function LocationsPage() {
           <div className="loc-hero-right">
             <div className="loc-map-card">
               <Image
-                src="/assets/images/backgrounds/kenya-map-overlay.jpg"
-                alt="Nairobi location coverage"
+                src="/assets/images/locations/nairobi.jpeg"
+                alt="Nairobi coverage map"
                 fill
                 className="loc-map-img"
               />
@@ -54,14 +56,14 @@ export default function LocationsPage() {
         </div>
       </section>
 
-      {/* GRID OF LOCATION CARDS */}
+      {/* GRID OF LOCATIONS */}
       <section className="loc-grid-section">
         <div className="loc-grid-header">
           <p className="loc-eyebrow">WHERE WE OPERATE</p>
           <h2>Our Nairobi Service Coverage</h2>
           <p>
-            Click any area to view full details, local estates, nearby
-            roads, landmarks and the services available in that neighbourhood.
+            Click any area to view full details, local estates, nearby roads,
+            landmarks and the services available in that neighbourhood.
           </p>
         </div>
 
@@ -81,16 +83,14 @@ export default function LocationsPage() {
                 <p className="loc-city">{loc.city}</p>
                 <h3>{loc.name}</h3>
 
-                <p className="loc-snippet">{loc.heroSubtitle}</p>
-
-                <div className="loc-features">
-                  {loc.serviceHighlights.slice(0, 3).map((item) => (
-                    <span key={item}>{item}</span>
-                  ))}
-                </div>
+                {/* NEW DESCRIPTION */}
+                <p className="loc-snippet">
+                  We provide same-day technicians across {loc.name}, covering all estates,
+                  access roads and landmark zones including {loc.estates[0]} and {loc.landmarks[0]}.
+                </p>
 
                 <div className="loc-footer">
-                  <span className="loc-cta">View Coverage ↗</span>
+                  <span className="loc-cta">View Full Coverage ↗</span>
                 </div>
               </div>
             </Link>

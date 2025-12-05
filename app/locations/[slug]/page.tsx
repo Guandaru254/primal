@@ -5,16 +5,12 @@ import { notFound } from "next/navigation";
 import { locations, getLocationBySlug } from "@/lib/locations";
 import "./location-slug.css";
 
-/* ------------------------------------------------------------------ */
-/* GENERATE STATIC PATHS */
-/* ------------------------------------------------------------------ */
+/* STATIC PARAMS */
 export function generateStaticParams() {
   return locations.map((loc) => ({ slug: loc.slug }));
 }
 
-/* ------------------------------------------------------------------ */
 /* METADATA */
-/* ------------------------------------------------------------------ */
 export async function generateMetadata({
   params,
 }: {
@@ -26,8 +22,8 @@ export async function generateMetadata({
   if (!loc) return {};
 
   return {
-    title: `${loc.name} Technicians | Appliance, Electrical, Plumbing`,
-    description: `Serving ${loc.name} with appliance repair, plumbing, electrical, AC repair, and full facility support. Estates served: ${loc.estates
+    title: `${loc.name} Technicians | Appliance, Plumbing, Electrical`,
+    description: `Same-day service in ${loc.name}. Estates served include: ${loc.estates
       .slice(0, 8)
       .join(", ")}.`,
     openGraph: {
@@ -38,9 +34,7 @@ export async function generateMetadata({
   };
 }
 
-/* ------------------------------------------------------------------ */
 /* PAGE UI */
-/* ------------------------------------------------------------------ */
 export default async function LocationPage({
   params,
 }: {
@@ -70,8 +64,8 @@ export default async function LocationPage({
 
             <p className="location-hero-desc">
               We provide same-day technicians across <strong>{loc.name}</strong>,
-              covering all estates, access roads, and landmark zones including{" "}
-              {loc.estates[0]} and {loc.landmarks[0]}.
+              covering all estates, access roads, and landmark zones including
+              {` ${loc.estates[0]} and ${loc.landmarks[0]}.`}
             </p>
 
             <ul className="location-hero-bullets">
@@ -86,7 +80,6 @@ export default async function LocationPage({
             </div>
           </div>
 
-          {/* HERO IMAGE */}
           <div className="location-hero-right">
             <div className="location-hero-image">
               <Image
@@ -106,7 +99,6 @@ export default async function LocationPage({
       <section className="location-content">
         <div className="location-main">
 
-          {/* Estates */}
           <h2>Estates & Neighborhoods in {loc.name}</h2>
           <ul className="location-areas-list">
             {loc.estates.map((e) => (
@@ -114,7 +106,6 @@ export default async function LocationPage({
             ))}
           </ul>
 
-          {/* Roads */}
           <h2>Main Roads & Routes</h2>
           <ul className="location-areas-list">
             {loc.roads.map((r) => (
@@ -122,7 +113,6 @@ export default async function LocationPage({
             ))}
           </ul>
 
-          {/* Landmarks */}
           <h2>Landmarks in {loc.name}</h2>
           <ul className="location-areas-list">
             {loc.landmarks.map((l) => (
@@ -130,8 +120,7 @@ export default async function LocationPage({
             ))}
           </ul>
 
-          {/* Services */}
-          <h2>Services Available in {loc.name}</h2>
+          <h2>Services Available</h2>
           <ul className="location-services-list">
             {loc.serviceHighlights.map((s) => (
               <li key={s}>{s}</li>
@@ -143,6 +132,7 @@ export default async function LocationPage({
         {/* SIDEBAR */}
         <aside className="location-aside">
 
+          {/* TOP ESTATES */}
           <div className="card">
             <h3>Top Estates</h3>
             <ul className="location-areas-list">
@@ -152,8 +142,9 @@ export default async function LocationPage({
             </ul>
           </div>
 
+          {/* TAGS — UPDATED */}
           <div className="card">
-            <h3>SEO Keywords</h3>
+            <h3>Tags</h3>
             <ul className="keyword-list">
               {loc.keywords.map((kw) => (
                 <li key={kw}>{kw}</li>
@@ -161,10 +152,11 @@ export default async function LocationPage({
             </ul>
           </div>
 
+          {/* CTA FIXED */}
           <div className="card contact-card">
             <h3>Need a Technician?</h3>
             <p>We offer same-day service in {loc.name}.</p>
-            <a href="/contact" className="primary-btn">Book Now</a>
+            <a href="/contact" className="primary-btn sidebar-btn">Book Now</a>
           </div>
 
         </aside>
