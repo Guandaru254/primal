@@ -1,6 +1,6 @@
-/* --------------------------------------------------
-   NAVBAR CONTAINER
--------------------------------------------------- */
+/* ===========================================
+   NAVBAR WRAPPER
+=========================================== */
 .nav-header {
   position: fixed;
   top: 0;
@@ -22,17 +22,17 @@
   padding: 0 35px;
 }
 
-/* --------------------------------------------------
+/* ===========================================
    LOGO
--------------------------------------------------- */
+=========================================== */
 .nav-logo img {
   height: 58px;
   object-fit: contain;
 }
 
-/* --------------------------------------------------
-   DESKTOP NAV MENU
--------------------------------------------------- */
+/* ===========================================
+   DESKTOP NAVIGATION
+=========================================== */
 .nav-menu {
   display: flex;
   gap: 40px;
@@ -48,7 +48,7 @@
   transition: color 0.25s ease;
 }
 
-/* Premium underline animation */
+/* Hover Underline Animation */
 .nav-menu a::after {
   content: "";
   position: absolute;
@@ -63,11 +63,12 @@
 .nav-menu a:hover {
   color: #0d99ff;
 }
+
 .nav-menu a:hover::after {
   width: 100%;
 }
 
-/* CTA BUTTON */
+/* CTA BUTTON (DESKTOP) */
 .nav-btn {
   background: #0d99ff;
   padding: 12px 26px;
@@ -83,9 +84,9 @@
   box-shadow: 0 6px 20px rgba(13, 153, 255, 0.35);
 }
 
-/* --------------------------------------------------
-   MOBILE MENU
--------------------------------------------------- */
+/* ===========================================
+   MOBILE MENU TOGGLE
+=========================================== */
 .nav-toggle {
   display: none;
   cursor: pointer;
@@ -102,7 +103,7 @@
   transition: 0.3s;
 }
 
-/* Hamburger animation */
+/* Cross Animation */
 .bar.open:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
@@ -113,29 +114,65 @@
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* Mobile Dropdown */
+/* ===========================================
+   MOBILE MENU PANEL
+=========================================== */
 .nav-mobile {
   display: none;
   flex-direction: column;
-  background: #fff;
-  padding: 20px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  background: #ffffff;
+  padding: 24px 20px;
+  border-radius: 0 0 16px 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  gap: 4px;
 }
 
 .nav-mobile a {
-  padding: 14px 0;
-  font-size: 1.1rem;
-  text-decoration: none;
+  padding: 12px 0;
+  border-bottom: 1px solid #f1f1f1;
+  font-size: 1.05rem;
+  font-weight: 500;
   color: #0e1b2c;
+  text-decoration: none;
 }
 
+.nav-mobile a:last-child {
+  border-bottom: none;
+}
+
+/* ===========================================
+   MOBILE CTA — FULL WIDTH BLUE BUTTON
+=========================================== */
+.nav-mobile-cta {
+  margin-top: 18px;
+  padding: 16px;
+  background: #0d99ff;
+  color: white !important;
+  text-align: center;
+  width: 100%;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  box-shadow: 0 6px 18px rgba(0, 153, 255, 0.35);
+  transition: 0.25s ease;
+}
+
+.nav-mobile-cta:hover {
+  background: #0077cc;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(0, 153, 255, 0.45);
+}
+
+/* ===========================================
+   SHOW MOBILE NAV
+=========================================== */
 .nav-mobile.show {
   display: flex;
 }
 
-/* --------------------------------------------------
+/* ===========================================
    RESPONSIVE
--------------------------------------------------- */
+=========================================== */
 @media (max-width: 992px) {
   .nav-menu {
     display: none;

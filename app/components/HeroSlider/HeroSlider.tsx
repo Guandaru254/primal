@@ -1,10 +1,9 @@
 "use client";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Autoplay } from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 
 import "swiper/css";
-import "swiper/css/navigation";
 
 import "./HeroSlider.css";
 
@@ -43,8 +42,7 @@ export default function HeroSlider() {
   return (
     <section className="hero-slider-container">
       <Swiper
-        modules={[Navigation, Autoplay]}
-        navigation
+        modules={[Autoplay]}
         loop
         autoplay={{ delay: 4500, disableOnInteraction: false }}
         className="hero-swiper"
@@ -55,8 +53,7 @@ export default function HeroSlider() {
               className="hero-slide-bg"
               style={{ backgroundImage: `url(${slide.image})` }}
             >
-              {/* UNIQUE CONTENT WRAPPER PER SLIDE */}
-              <div className="hero-text-box" key={slide.title}>
+              <div className="hero-text-box">
                 <h1 className="hero-title">{slide.title}</h1>
                 <p className="hero-subtitle">{slide.subtitle}</p>
                 <p className="hero-area">Serving {slide.area}</p>
