@@ -4,7 +4,7 @@ import AboutExperience from "@/components/AboutExperience/AboutExperience";
 import TestimonialsSlider from "@/components/TestimonialsSlider";
 import MissionVision from "@/components/MissionVision/MissionVision";
 import WhyChooseUsAbout from "@/components/AboutWhyChooseUs/AboutWhyChooseUs";
-import Footer from "@/components/Footer/Footer";
+import Footer from "@/components/UI/Footer";
 
 import "../about/about.css";
 

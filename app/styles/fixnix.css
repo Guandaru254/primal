@@ -10973,3 +10973,30 @@ er-one__single:last-child:before {
 /*--------------------------------------------------------------
 # Site Footer
 --------------------------------------------------------------*/
+
+/* --------------------------------------------------
+   FLOATING CALL BUTTON
+-------------------------------------------------- */
+.floating-call-btn {
+  position: fixed;
+  bottom: 95px; /* slightly above WhatsApp */
+  right: 22px;
+  width: 54px;
+  height: 54px;
+  background: #007aff; /* Blue */
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 26px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  z-index: 9999;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.floating-call-btn:hover {
+  transform: scale(1.07);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.3);
+}

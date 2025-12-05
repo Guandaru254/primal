@@ -1,5 +1,5 @@
 // ============================================================================
-// SERVICES DATABASE — FULLY EXPANDED + SEO-OPTIMIZED
+// SERVICES DATABASE — EXPANDED, BALANCED & SEO-OPTIMIZED
 // ============================================================================
 
 export type Service = {
@@ -11,12 +11,11 @@ export type Service = {
   offer: string[];
   faq: { q: string; a: string }[];
   keywords: string[];
-
-  /** NEW: Appliances handled under this service */
   appliances: string[];
 };
 
 export const services: Service[] = [
+
   // ============================================================================
   // 1) HVAC / AIR CONDITIONING
   // ============================================================================
@@ -25,126 +24,146 @@ export const services: Service[] = [
     name: "HVAC & Air Conditioning Repair & Installation in Nairobi",
     heroImage: "/assets/images/services/hvac-main.jpg",
     shortDescription:
-      "Professional HVAC installation, repair and preventive maintenance for homes, offices, apartments and commercial buildings across Nairobi.",
+      "Comprehensive HVAC installation, repair and preventive maintenance for homes, apartments, offices and commercial buildings across Nairobi.",
 
     appliances: [
       "Split AC units",
       "Window AC units",
-      "Portable AC units",
       "Cassette AC systems",
-      "VRF / VRV AC systems",
-      "Ceiling AC units",
+      "VRF / VRV multi-split systems",
+      "Portable AC units",
+      "Ceiling & ducted AC units",
       "Server room precision cooling",
-      "Dehumidifiers & humidifiers",
-      "Air ventilation fans",
+      "Ventilation fans & air handlers",
     ],
 
     bullets: [
-      "Installation for homes, offices, shops and server rooms",
-      "Gas charging, leak testing and compressor replacement",
-      "Repair for split, window, cassette and VRF/VRV systems",
-      "Emergency AC repair for offices and commercial spaces",
-      "Preventive maintenance programs for residential & commercial buildings",
+      "Expert installation for residential, office and commercial AC systems",
+      "Professional gas charging, leak testing and pressure balancing",
+      "Repair for split, cassette, window and VRF/VRV AC systems",
+      "Fast response for office AC breakdowns and server room cooling failures",
+      "Indoor and outdoor unit servicing to improve cooling efficiency",
+      "Thermostat, PCB, fan motor and compressor diagnostic & replacement",
+      "Scheduled preventive maintenance for homes, buildings and malls",
     ],
 
     offer: [
-      "Complete AC installation for residential and commercial properties.",
-      "Compressor, fan motor, PCB, capacitor and thermostat replacement.",
-      "Gas recharging, leak testing and sealing with advanced tools.",
-      "VRF/VRV system troubleshooting for multi-storey buildings.",
-      "Relocation and reinstallation of AC systems when moving houses or offices.",
-      "Smart thermostat installation and energy-efficiency optimization.",
-      "Full preventive maintenance to minimise breakdowns and reduce energy costs.",
+      "AC installation for apartments, offices, shops and commercial spaces.",
+      "Compressor, fan motor, capacitor and control board replacement.",
+      "Leak detection, gas charging and sealing with professional equipment.",
+      "Advanced VRF/VRV system troubleshooting for buildings.",
+      "AC relocation and reinstallation during office or home moves.",
+      "Thermostat upgrades including smart thermostat integration.",
+      "Deep cleaning for indoor units, filters and evaporator coils.",
+      "Server room cooling system repair with rapid response.",
+      "Fan blade, motor and blower replacement.",
+      "Preventive maintenance to reduce electricity consumption and breakdowns.",
+      "Noise & vibration reduction tuning for AC units.",
+      "Outdoor unit installation with anti-vibration and weather protection.",
     ],
 
     faq: [
       {
         q: "Do you offer same-day AC repair in Nairobi?",
-        a: "Yes. Most Nairobi estates including Kilimani, Westlands, Kileleshwa, Lavington and CBD get same-day or next-day AC repair depending on availability.",
+        a: "Yes. Many estates such as Kilimani, Kileleshwa, Westlands and Lavington receive same-day or next-day repair depending on technician availability.",
       },
       {
         q: "Which AC systems do you install?",
-        a: "We install split units, window ACs, VRF/VRV systems, cassette units, portable units and ceiling-mounted ACs.",
+        a: "Split ACs, cassette ACs, window units, portable ACs, VRF/VRV systems and ducted ceiling AC units.",
       },
       {
-        q: "Do you service commercial HVAC systems?",
-        a: "Yes. We maintain HVAC systems in malls, office blocks, hotels, restaurants, medical facilities and industrial buildings.",
+        q: "Do you repair commercial HVAC systems?",
+        a: "Yes. We service systems in malls, office blocks, restaurants, clinics, hotels and industrial buildings.",
       },
       {
         q: "How often should AC be serviced?",
-        a: "Every 3–4 months for homes, and every 2–3 months for offices, shops or dusty environments.",
+        a: "Every 3–4 months for homes, and every 2–3 months for commercial spaces or dusty environments.",
+      },
+      {
+        q: "Do you offer annual maintenance contracts?",
+        a: "Yes. We provide AMC packages for offices, apartments, server rooms and commercial buildings.",
       },
     ],
 
     keywords: [
       "AC repair Nairobi",
-      "HVAC installation Nairobi",
-      "AC technician near me",
-      "VRF AC repair Kenya",
-      "air conditioning service",
+      "HVAC technician Kenya",
+      "air conditioning installation Nairobi",
+      "VRF AC repair",
+      "AC gas refill Nairobi",
     ],
   },
 
   // ============================================================================
-  // 2) FRIDGE REPAIR
+  // 2) FRIDGE & FREEZER REPAIR
   // ============================================================================
   {
     slug: "fridge-repair-nairobi",
     name: "Fridge & Freezer Repair in Nairobi",
     heroImage: "/assets/images/services/fridge.jpg",
     shortDescription:
-      "Same-day fridge repair for all models — domestic, commercial and industrial cold storage units across Nairobi.",
+      "Same-day repair for fridges, freezers, cold rooms and chillers — domestic, commercial and industrial.",
 
     appliances: [
       "Single-door fridges",
       "Double-door fridges",
-      "Side-by-side fridges",
-      "French-door refrigerators",
+      "Side-by-side refrigerators",
+      "French-door fridges",
       "Chest freezers",
       "Upright freezers",
       "Display chillers",
       "Cold rooms",
-      "Under-counter chillers",
+      "Bar coolers & under-counter chillers",
     ],
 
     bullets: [
-      "Fixing fridges not cooling or over-freezing",
-      "Compressor and thermostat replacement",
-      "Gas refill & leak sealing",
-      "Cold room troubleshooting",
-      "Water leakage and noise repair",
+      "Repair for fridges not cooling, over-freezing or shutting down",
+      "Compressor, thermostat, and sensor replacement",
+      "Gas recharge and leak sealing for R600a/R134a systems",
+      "Cold room troubleshooting and commercial refrigeration repair",
+      "Door gasket replacement for better cooling efficiency",
+      "Fan motor, relay and defrost system repair",
+      "Emergency response for commercial cold storage failures",
     ],
 
     offer: [
-      "Diagnostics for all fridge and freezer problems including cooling loss, icing, loud noise and electrical faults.",
-      "Cold room repair for restaurants, bars, butchery shops and supermarkets.",
-      "Thermostat, relay, overload protector and PCB board replacement.",
-      "Door seal and gasket replacement to stop warm air leakage.",
-      "Accurate refrigerant re-gassing using approved R600a/R134a systems.",
-      "Replacement of faulty cooling fans, sensors and evaporator systems.",
-      "Emergency support for commercial cold storage.",
+      "Fridge diagnostics for cooling, freezing and electrical issues.",
+      "Cold room repair for hotels, butcheries, bars and supermarkets.",
+      "Thermostat, overload protector and defrost heater replacement.",
+      "Accurate refrigerant charging with approved gases.",
+      "Fan motor, PCB board and evaporator repair.",
+      "Ice-build-up removal and drainage flushing.",
+      "Door seal and hinge repair to stop warm air leaks.",
+      "Noise and vibration troubleshooting.",
+      "Commercial freezer restoration with rapid response.",
+      "Sensor, damper and airflow control repair.",
+      "Temperature calibration for optimal performance.",
     ],
 
     faq: [
       {
         q: "Do you repair all fridge brands?",
-        a: "Yes — LG, Samsung, Bosch, Whirlpool, Von, Mika, Hisense, Beko, Ramtons and more.",
+        a: "Yes — including LG, Samsung, Bosch, Whirlpool, Von, Mika, Hisense, Beko, Ramtons and many more.",
       },
       {
-        q: "Do you offer same-day fridge repair?",
-        a: "Yes. Most Nairobi estates get same-day diagnosis & repair depending on part availability.",
+        q: "Can you repair commercial cold rooms?",
+        a: "Yes. We repair cold rooms, display chillers, island freezers and industrial cooling systems.",
       },
       {
-        q: "Do you work on cold rooms?",
-        a: "Yes. We repair and maintain cold rooms, display chillers and commercial refrigeration systems.",
+        q: "What causes a fridge not to cool?",
+        a: "Common causes include refrigerant leaks, faulty compressors, blocked airflow, dirty coils or defective thermostats.",
+      },
+      {
+        q: "Do you offer emergency response?",
+        a: "Yes — especially for commercial cold rooms and freezers storing perishables.",
       },
     ],
 
     keywords: [
       "fridge repair Nairobi",
-      "freezer repair",
+      "freezer technician",
       "cold room repair Kenya",
-      "fridge technician near me",
+      "fridge gas refill Nairobi",
     ],
   },
 
@@ -156,7 +175,7 @@ export const services: Service[] = [
     name: "Washing Machine Repair in Nairobi",
     heroImage: "/assets/images/services/Washing-Machine.jpg",
     shortDescription:
-      "Fast, professional repair for washing machines, dryers and washer-dryer combos across Nairobi.",
+      "Repair, installation and servicing of washing machines, dryers and washer-dryer combos — all brands.",
 
     appliances: [
       "Front-load washing machines",
@@ -169,37 +188,51 @@ export const services: Service[] = [
     ],
 
     bullets: [
-      "Repair for noisy or leaking machines",
-      "Drainage and spinning issues",
-      "Motor, belt & pump replacement",
-      "Dryer heating faults",
-      "Washer-dryer combo repair",
+      "Repair for machines not spinning, draining or powering on",
+      "Fixing leaks, noise, shaking and vibration problems",
+      "Dryer heating issues troubleshooting",
+      "Washer-dryer combo electrical and mechanical repair",
+      "Error code diagnostics for all brands",
+      "Pump, belt, motor and bearing replacement",
     ],
 
     offer: [
-      "Diagnosis & repair for all washing machine faults including noise, vibration, leaks, error codes and spinning issues.",
-      "Dryer repair for both electric and gas models.",
-      "Washer-dryer combo repair for heating, drying and control panel issues.",
-      "Replacement of pumps, motors, bearings, belts, heaters and PCB boards.",
-      "Proper installation with levelling & drain management.",
-      "Commercial laundry support for hotels, laundromats & hostels.",
+      "Full diagnostics for all washing machine faults.",
+      "Dryer repair for heating, rotation and electrical issues.",
+      "Replacement of pumps, motors, belts, bearings and heaters.",
+      "Drum repair including spider arm and tub issues.",
+      "PCB and control panel troubleshooting.",
+      "Unblocking drainage systems and removing clogs.",
+      "Balancing machines to reduce shaking and noise.",
+      "Washer-dryer combo repair for heating and drying problems.",
+      "Commercial laundry setup and maintenance.",
+      "Installation & levelling for new machines.",
+      "Seal, gasket and door mechanism repairs.",
     ],
 
     faq: [
       {
-        q: "Do you handle all washing machine brands?",
-        a: "Yes — LG, Samsung, Bosch, Whirlpool, Hisense, Beko, Mika, Ramtons and more.",
+        q: "Why is my washing machine not spinning?",
+        a: "Common causes include faulty motors, damaged belts, blocked pumps or unbalanced loads.",
       },
       {
-        q: "Do you offer emergency repair?",
-        a: "Yes, depending on your location and availability.",
+        q: "Do you repair both front-load and top-load machines?",
+        a: "Yes, our technicians handle all models and brands.",
+      },
+      {
+        q: "Why does my dryer not heat?",
+        a: "Faulty heating elements, thermostats, thermal fuses or control boards are typical reasons.",
+      },
+      {
+        q: "Do you install washing machines?",
+        a: "Yes — including drain connection, levelling and testing.",
       },
     ],
 
     keywords: [
       "washing machine repair Nairobi",
-      "dryer repair",
-      "washer technician near me",
+      "dryer technician Nairobi",
+      "washer not spinning repair",
     ],
   },
 
@@ -211,47 +244,57 @@ export const services: Service[] = [
     name: "Electrical Installation & Repair Services in Nairobi",
     heroImage: "/assets/images/services/electrical-services.jpg",
     shortDescription:
-      "Certified electrical repair, wiring, fault-finding and power backup installation for homes, offices and commercial buildings.",
+      "Safe, certified electrical repair, installation, wiring and fault-finding for homes, offices and commercial spaces.",
 
     appliances: [
       "Cookers & ovens",
       "Water heaters",
       "Microwaves",
-      "Switchgear & breakers",
-      "Sockets & lighting circuits",
-      "Surge protectors",
+      "Distribution boards",
+      "Sockets & lighting",
       "Stabilizers & inverters",
+      "Backup power systems",
     ],
 
     bullets: [
-      "Wiring & rewiring",
-      "Socket and lighting installation",
-      "DB board upgrades",
-      "Fault-finding & tripping repair",
-      "Emergency electrical response",
+      "Wiring and rewiring for homes, offices and commercial buildings",
+      "Socket, switch, lighting and fixture installation",
+      "Electrical fault-finding and circuit troubleshooting",
+      "Distribution board upgrades and load balancing",
+      "Installation of stabilizers, surge protectors and changeover switches",
+      "Emergency electrical repair for unsafe faults",
     ],
 
     offer: [
-      "Full electrical installation and rewiring for homes, offices and shops.",
-      "Fault-finding for tripping circuits, burning smells, dimming lights and shocks.",
-      "Generator, inverter, UPS and solar backup system integration.",
-      "Lighting installation including LED, garden lights and security floodlights.",
-      "Installation of stabilizers, surge protectors and automatic changeover switches.",
-      "Electrical safety audits for landlords, property managers and commercial complexes.",
+      "Complete wiring and rewiring for renovations and new builds.",
+      "Fixing tripping circuits, power surges and burning smells.",
+      "Lighting installation including LED, outdoor and security lights.",
+      "Backup power integration — inverters, UPS and generators.",
+      "Water heater installation and repair.",
+      "Cooker, oven and heavy appliance wiring.",
+      "Electrical safety audits for landlords and property managers.",
+      "Socket, switch and fuse replacement.",
+      "Earthing and grounding for safety.",
+      "Distribution board balancing and upgrades.",
+      "Commercial electrical maintenance for offices and retail spaces.",
     ],
 
     faq: [
       {
-        q: "Are your electricians licensed?",
-        a: "Yes. All technicians are trained, certified and experienced.",
+        q: "Do you offer emergency electrical repair?",
+        a: "Yes — especially for burning smells, sparks, tripping circuits or power loss.",
       },
       {
-        q: "Do you offer emergency electrical repair?",
-        a: "Yes for Nairobi estates, depending on availability.",
+        q: "Do you install backup power systems?",
+        a: "Yes. We install UPS, inverters, stabilizers and generators.",
+      },
+      {
+        q: "Can you handle full home rewiring?",
+        a: "Yes — including load balancing, DB upgrades and testing.",
       },
     ],
 
-    keywords: ["electrician Nairobi", "electrical repair", "wiring services"],
+    keywords: ["electrician Nairobi", "electrical wiring", "DB board upgrade"],
   },
 
   // ============================================================================
@@ -262,42 +305,51 @@ export const services: Service[] = [
     name: "Plumbing Installation & Repair in Nairobi",
     heroImage: "/assets/images/services/plumbing.jpg",
     shortDescription:
-      "Professional plumbing repair for leaks, blockages, installations and water heater issues across Nairobi.",
+      "Professional plumbing repair for leaks, blockages, bathrooms, piping and water heating systems.",
 
     appliances: [
-      "Instant water heaters",
+      "Instant showers",
       "Storage water heaters",
       "Booster pumps",
       "Water tanks",
-      "Toilets & faucets",
-      "Showers & mixers",
+      "Toilets",
+      "Faucets & mixers",
     ],
 
     bullets: [
-      "Leak detection & pipe repair",
-      "Blocked drains & toilets",
-      "Bathroom installation",
-      "Tank & pump setup",
-      "Water heater installation & repair",
+      "Burst pipe and leak repair",
+      "Blocked drain & sewer unblocking",
+      "Bathroom and kitchen plumbing installation",
+      "Pump and tank installation & balancing",
+      "Water heater repair and installation",
+      "Emergency response for major leaks",
     ],
 
     offer: [
-      "Emergency plumbing repair for burst pipes, blocked toilets and flooding.",
-      "Bathroom and kitchen installation for renovations and new builds.",
-      "Drain unblocking for kitchens, toilets and sewer lines.",
-      "Pump, tank and booster installation with pressure balancing.",
-      "Instant and storage water heater repair, installation and safety checks.",
-      "Plumbing maintenance for apartments, malls, estates and commercial facilities.",
+      "Leak detection and rapid pipe repair.",
+      "Drain unblocking for kitchens, toilets and bathroom lines.",
+      "Full bathroom installation including mixers, showers and toilets.",
+      "Water heater installation and fault repair.",
+      "Pump and tank installation with pressure calibration.",
+      "Sewer line clearing and preventive plumbing maintenance.",
+      "Tap, mixer and faucet repair or replacement.",
+      "Sink and toilet unblocking.",
+      "Renovation plumbing for new kitchens and bathrooms.",
+      "Outdoor plumbing including tank lines and garden taps.",
     ],
 
     faq: [
       {
         q: "Do you offer emergency plumbing?",
-        a: "Yes — especially for severe leaks, flooding or blocked sewer lines.",
+        a: "Yes — especially for flooding, major leaks or blocked sewer lines.",
       },
       {
-        q: "Do you install new bathrooms?",
-        a: "Yes. We install toilets, sinks, mixers, showers and all plumbing fixtures.",
+        q: "Can you install complete bathrooms?",
+        a: "Yes. We install toilets, mixers, showers, sinks and drainage.",
+      },
+      {
+        q: "Do you unblock sewer lines?",
+        a: "Yes — using professional equipment.",
       },
     ],
 
@@ -305,51 +357,59 @@ export const services: Service[] = [
   },
 
   // ============================================================================
-  // 6) LPG GAS INSTALLATION
+  // 6) LPG INSTALLATION
   // ============================================================================
   {
     slug: "lpg-gas-installation-piping-nairobi",
-    name: "LPG Gas Installation & Gas Piping in Nairobi",
+    name: "LPG Gas Installation & Piping in Nairobi",
     heroImage: "/assets/images/services/lpg-installation.jpg",
     shortDescription:
-      "Safe LPG piping, gas line installation and leak testing for homes, apartments, hotels and restaurants.",
+      "Safe LPG piping, gas line installation, compliance checks and leak testing for homes and commercial kitchens.",
 
     appliances: [
       "Cookers",
       "Ovens",
       "Gas hobs",
-      "Commercial kitchen burners",
+      "Commercial burners",
       "Cylinder manifolds",
     ],
 
     bullets: [
-      "Central LPG system installation",
-      "Gas piping for homes & apartments",
-      "Leak testing & inspection",
-      "Regulator & hose upgrades",
-      "Emergency gas leak response",
+      "Residential and commercial LPG piping installation",
+      "Gas leak testing and safety inspection",
+      "Outdoor cylinder enclosure setup",
+      "Regulator, hose and valve replacement",
+      "Emergency gas leak repair",
+      "Restaurant kitchen LPG system installation",
     ],
 
     offer: [
-      "Gas piping for residential and commercial kitchens.",
-      "Safe relocation of gas cylinders to outdoor enclosures.",
-      "Leak testing, regulator replacement and compliance checks.",
-      "Design of multi-cylinder manifold systems.",
-      "Emergency shutdown and repair for gas leaks.",
+      "Full LPG piping for apartments, homes and commercial kitchens.",
+      "Leak detection using professional digital tools.",
+      "Safe relocation of cylinders to outdoor cages.",
+      "Setup of multi-cylinder manifold systems for restaurants.",
+      "Regulator, hose and valve upgrade for safety compliance.",
+      "Emergency gas leak shutdown and repair.",
+      "Gas line pressure balancing and safety certification.",
+      "Installation of copper and flexible gas piping systems.",
     ],
 
     faq: [
       {
         q: "Do you install LPG systems for restaurants?",
-        a: "Yes — including multi-cylinder commercial setups.",
+        a: "Yes — including manifold design, piping and safety checks.",
       },
       {
         q: "Do you test for gas leaks?",
-        a: "Yes. We use professional leak detection tools.",
+        a: "Yes — using electronic leak detection equipment.",
+      },
+      {
+        q: "Can you relocate my cylinder outside?",
+        a: "Yes. We create secure outdoor compartments and reroute piping safely.",
       },
     ],
 
-    keywords: ["gas installation Nairobi", "gas piping", "LPG technician"],
+    keywords: ["LPG technician Nairobi", "gas piping", "LPG installation service"],
   },
 
   // ============================================================================
@@ -360,45 +420,51 @@ export const services: Service[] = [
     name: "Small Appliance Repair in Nairobi",
     heroImage: "/assets/images/services/small-appliances.jpg",
     shortDescription:
-      "Professional repair for blenders, kettles, water dispensers, air fryers and other small domestic appliances.",
+      "Repair for blenders, coffee machines, kettles, water dispensers, air fryers and other kitchen appliances.",
 
     appliances: [
       "Blenders",
-      "Juicers",
-      "Food processors",
       "Coffee makers",
       "Espresso machines",
       "Kettles",
       "Water dispensers",
       "Air fryers",
       "Toasters",
+      "Food processors",
       "Electric grills",
     ],
 
     bullets: [
-      "Kitchen appliance repair",
-      "Coffee machine servicing",
-      "Water dispenser repair",
-      "Heating element faults",
-      "Power failure fix",
+      "Blender, grinder and motor repair",
+      "Coffee machine descaling and servicing",
+      "Water dispenser cooling/heating repair",
+      "Heating element and thermostat replacement",
+      "Power failure and fuse repair",
+      "Kitchen appliance diagnostics for all brands",
     ],
 
     offer: [
-      "Repair for blenders, grinders, air fryers, kettles and food processors.",
-      "Coffee machine and grinder servicing for homes and small cafés.",
-      "Water dispenser repair including heating/cooling faults.",
-      "Replacement of heating elements, thermostats and switches.",
-      "Countertop oven and grill troubleshooting.",
+      "Blender and grinder motor repair and blade replacement.",
+      "Coffee machine servicing including descaling and pressure cleaning.",
+      "Water dispenser repair for cooling, heating and leakage issues.",
+      "Air fryer, toaster and kettle electrical repair.",
+      "Replacement of motors, fuses, thermostats and switches.",
+      "Control panel and sensor troubleshooting.",
+      "Countertop oven repair and general diagnostics.",
     ],
 
     faq: [
       {
         q: "Do you repair espresso machines?",
-        a: "Yes — both domestic and small commercial units.",
+        a: "Yes — both domestic and small commercial models.",
       },
       {
         q: "Do you offer pickup?",
-        a: "In selected estates, at a small additional cost.",
+        a: "Yes — in selected estates for an additional fee.",
+      },
+      {
+        q: "Do you repair all small appliance brands?",
+        a: "Yes. We handle all major brands available in Kenya.",
       },
     ],
 
@@ -413,7 +479,7 @@ export const services: Service[] = [
     name: "Kitchen Appliance Repair in Nairobi",
     heroImage: "/assets/images/services/kitchen-appliances.jpg",
     shortDescription:
-      "Repair for cookers, ovens, microwaves, hoods and dishwashers — domestic & commercial.",
+      "Repair and servicing of cookers, ovens, microwaves, dishwashers, range hoods and all built-in appliances.",
 
     appliances: [
       "Cookers",
@@ -427,87 +493,102 @@ export const services: Service[] = [
     ],
 
     bullets: [
-      "Cooker & oven repair",
-      "Microwave servicing",
-      "Dishwasher repair",
-      "Range hood maintenance",
-      "Built-in appliance support",
+      "Cooker ignition repair and flame adjustment",
+      "Oven thermostat and heating coil replacement",
+      "Microwave magnetron and high-voltage repair",
+      "Dishwasher drainage and pump troubleshooting",
+      "Range hood suction and motor repair",
+      "Built-in appliance removal and reinstallation",
     ],
 
     offer: [
-      "Ignition repair for gas cookers and hobs.",
-      "Oven thermostat, coil and heating element replacement.",
-      "Microwave magnetron, high-voltage fuse and capacitor repair.",
-      "Dishwasher drainage, spray arm and pump repairs.",
-      "Range hood motor and suction troubleshooting.",
+      "Cooker ignition and burner flame repair.",
+      "Thermostat, sensor and temperature calibration for ovens.",
+      "Microwave repair including magnetron, fuses and capacitors.",
+      "Dishwasher repair for drainage, noise and cleaning issues.",
+      "Range hood installation and suction performance repair.",
+      "Built-in oven and microwave servicing.",
+      "Heating element replacement for cookers and ovens.",
+      "Electronic control board diagnostics.",
     ],
 
     faq: [
       {
         q: "Do you repair built-in kitchen appliances?",
-        a: "Yes. We carefully remove and reinstall them without damaging cabinetry.",
+        a: "Yes — we safely remove and reinstall appliances without damaging cabinets.",
       },
       {
-        q: "Do you repair dishwashers?",
-        a: "Yes — for residential and light-commercial kitchens.",
+        q: "Do dishwashers require frequent servicing?",
+        a: "Yes. Filters, spray arms and drainage systems should be cleaned regularly.",
+      },
+      {
+        q: "Do you repair gas cookers?",
+        a: "Yes — including ignition systems and burner calibration.",
       },
     ],
 
     keywords: [
       "cooker repair Nairobi",
-      "oven repair Kenya",
-      "microwave repair",
-      "dishwasher technician",
+      "oven technician Kenya",
+      "microwave repair service",
+      "dishwasher repair Nairobi",
     ],
   },
 
   // ============================================================================
-  // 9) LAUNDRY APPLIANCE REPAIR
+  // 9) LAUNDRY APPLIANCE REPAIR (NON-WASHING-MACHINE)
   // ============================================================================
   {
     slug: "laundry-appliance-repair-nairobi",
     name: "Laundry Appliance Repair in Nairobi",
     heroImage: "/assets/images/services/laundry.jpg",
     shortDescription:
-      "Repair for dryers, steam irons, washer-dryer combos and commercial laundry machines.",
+      "Repair for dryers, steam irons, garment steamers, washer-dryer combos and commercial laundry systems.",
 
     appliances: [
       "Tumble dryers",
       "Spin dryers",
       "Steam irons",
       "Garment steamers",
-      "Commercial laundry machines",
+      "Commercial laundry dryers",
       "Washer-dryer combos",
     ],
 
     bullets: [
-      "Dryer heating repair",
-      "Commercial machine support",
-      "Error code diagnosis",
-      "Drum & bearing repair",
-      "Laundry setup for apartments & hotels",
+      "Dryer heating & drum rotation issues",
+      "Steam iron thermostat & element repair",
+      "Washer-dryer combo troubleshooting",
+      "Commercial laundry servicing for hostels & hotels",
+      "Bearing, belt & roller replacement",
+      "Dryer control board diagnostics",
     ],
 
     offer: [
-      "Dryer repair including heating, rotation and electrical issues.",
-      "Steam iron and garment steamer troubleshooting.",
-      "Service for hostel, Airbnb, hotel and laundromat machines.",
-      "Laundry room design consulting.",
-      "Washer-dryer combo electrical and mechanical repair.",
+      "Dryer repair for heating, rotation and airflow problems.",
+      "Commercial laundry dryer maintenance and repair.",
+      "Washer-dryer electrical and mechanical troubleshooting.",
+      "Steam iron and garment steamer repair.",
+      "Drum bearing, belt and roller replacement.",
+      "Fuse, thermostat and heating element repair.",
+      "Dryer vent cleaning and airflow improvement.",
     ],
 
     faq: [
       {
-        q: "Do you repair commercial laundry machines?",
-        a: "Yes — for laundromats, hostels, hotels and institutions.",
+        q: "Do you repair commercial dryers?",
+        a: "Yes — for hotels, laundromats, hostels and institutions.",
+      },
+      {
+        q: "Why is my dryer not heating?",
+        a: "Common causes include faulty heating elements, thermostats, fuses or blocked airflow.",
+      },
+      {
+        q: "Do you repair washer-dryer combos?",
+        a: "Yes — we repair both washing and drying components.",
       },
     ],
 
-    keywords: [
-      "dryer repair Nairobi",
-      "commercial laundry repair",
-      "laundry appliance technician",
-    ],
+    keywords: ["dryer repair Nairobi", "laundry technician", "steam iron repair"],
   },
 
   // ============================================================================
@@ -518,50 +599,57 @@ export const services: Service[] = [
     name: "Emergency Appliance Repair Services in Nairobi",
     heroImage: "/assets/images/services/maintenance.jpg",
     shortDescription:
-      "Priority same-day repair for fridges, ACs, washing machines and essential appliances across Nairobi.",
+      "Priority same-day repair for essential appliances including fridges, ACs, washers, cold rooms and more.",
 
     appliances: [
-      "Fridges",
-      "Freezers",
+      "Fridges & freezers",
       "Cold rooms",
+      "AC systems",
       "Washing machines",
       "Dryers",
-      "AC systems",
       "Cookers & ovens",
     ],
 
     bullets: [
-      "Same-day emergency repair",
-      "Fridge & cold room breakdown response",
-      "AC system failure repair",
-      "Washing machine emergency troubleshooting",
-      "Commercial priority support",
+      "Fast dispatch for urgent appliance failures",
+      "Emergency fridge & freezer cooling restoration",
+      "Office & server room AC breakdown support",
+      "Priority repair for essential home appliances",
+      "Commercial emergency response",
+      "Temporary workarounds while sourcing parts",
     ],
 
     offer: [
-      "Fast dispatch for appliance breakdowns that affect business or comfort.",
-      "Cold room and freezer emergency response to prevent stock loss.",
-      "Office AC emergency repair for server rooms, clinics and shops.",
-      "Emergency washing machine and dryer repair for large families, hostels and laundromats.",
-      "Temporary workarounds where possible while sourcing parts.",
+      "Immediate support for fridge cooling failures.",
+      "Cold room temperature restoration to protect stock.",
+      "Office and server room AC emergency repair.",
+      "Urgent washing machine and dryer repair.",
+      "Cooker, oven and essential appliance breakdown repair.",
+      "On-site diagnostics with rapid turnaround.",
+      "Fault isolation and temporary solutions when needed.",
+      "Emergency callouts within Nairobi depending on availability.",
     ],
 
     faq: [
       {
         q: "Which emergencies qualify?",
-        a: "Fridge not cooling, cold room failure, AC breakdown in offices, major washing machine leaks, and unsafe electrical appliance faults.",
+        a: "Fridges not cooling, cold room shutdowns, AC failure, major washing machine leaks, and any appliance posing electrical danger.",
       },
       {
-        q: "Do you charge more for emergency calls?",
-        a: "A higher callout fee may apply, which we disclose before dispatch.",
+        q: "Do you charge extra for emergency callouts?",
+        a: "A higher callout fee may apply depending on urgency and location.",
+      },
+      {
+        q: "Do you offer same-day service?",
+        a: "Yes, for most Nairobi estates when technicians are available.",
       },
     ],
 
     keywords: [
-      "emergency repair Nairobi",
-      "same day appliance repair",
-      "emergency fridge repair",
-      "urgent AC repair",
+      "emergency appliance repair Nairobi",
+      "same day repair",
+      "urgent fridge repair",
+      "emergency AC technician",
     ],
   },
 ];

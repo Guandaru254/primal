@@ -8,6 +8,7 @@ import "./globals.css";
 // GLOBAL COMPONENTS
 import Navbar from "./components/UI/Navbar";
 import WhatsAppButton from "./components/UI/WhatsAppButton";
+import CallButton from "./components/UI/CallButton";
 
 export const metadata: Metadata = {
   title: "Primal Facilities Management",
@@ -21,22 +22,21 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body>
-        {/* GLOBAL NAVIGATION BAR */}
+        {/* NAVIGATION */}
         <Navbar />
 
-        {/* PAGE CONTENT */}
+        {/* MAIN PAGE CONTENT */}
         {children}
 
-        {/* GLOBAL FLOATING WHATSAPP BUTTON */}
-        <WhatsAppButton />
+        {/* FLOATING ACTION BUTTONS */}
+        <div className="fab-container">
+          <CallButton />
+          <WhatsAppButton />
+        </div>
       </body>
     </html>
   );
