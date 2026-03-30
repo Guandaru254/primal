@@ -3,31 +3,46 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import "../blog.css";
-import {
-  blogPosts,
-  getBlogPostBySlug,
-  type BlogPost
-} from "@/lib/blog";
+import "./slug.css";
 import { notFound } from "next/navigation";
+import { sanityFetch } from "@/sanity/lib/client";
+import {
+  postBySlugQuery,
+  postSlugsQuery,
+  allPostsQuery,
+} from "@/sanity/lib/queries";
+import { urlFor } from "@/sanity/lib/image";
+import { PortableTextRenderer } from "@/components/PortableTextRenderer";
+import type { SanityPost } from "@/types/blog";
 
 type Params = { slug: string };
 
-export function generateStaticParams(): Params[] {
-  return blogPosts.map((post) => ({ slug: post.slug }));
+// ✅ Pre-render all known slugs at build time
+export async function generateStaticParams(): Promise<Params[]> {
+  const slugs = await sanityFetch<{ slug: string }[]>({
+    query: postSlugsQuery,
+  });
+  return slugs.map((s) => ({ slug: s.slug }));
 }
 
-// Next 16: params is a Promise in metadata
-export async function generateMetadata(
-  { params }: { params: Promise<Params> }
-): Promise<Metadata> {
+// ✅ Dynamic SEO metadata per post
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<Params>;
+}): Promise<Metadata> {
   const { slug } = await params;
-  const post = getBlogPostBySlug(slug);
+  const post = await sanityFetch<SanityPost | null>({
+    query: postBySlugQuery,
+    params: { slug },
+  });
 
-  if (!post) {
-    return {};
-  }
+  if (!post) return {};
 
-  const url = `https://primalfacilitiesmanagement.co.ke/blog/${post.slug}`;
+  const url = `https://primalfacilitiesmanagement.co.ke/blog/${post.slug.current}`;
+  const ogImage = post.heroImage?.asset
+    ? urlFor(post.heroImage).width(1200).height(630).quality(80).url()
+    : undefined;
 
   return {
     title: `${post.title} | Primal Facilities Management Blog`,
@@ -36,8 +51,9 @@ export async function generateMetadata(
       title: `${post.title} | Primal Facilities Management Blog`,
       description: post.excerpt,
       type: "article",
-      url
-    }
+      url,
+      ...(ogImage ? { images: [{ url: ogImage, width: 1200, height: 630 }] } : {}),
+    },
   };
 }
 
@@ -45,12 +61,15 @@ function formatDate(dateStr: string) {
   return new Date(dateStr).toLocaleDateString("en-KE", {
     day: "numeric",
     month: "short",
-    year: "numeric"
+    year: "numeric",
   });
 }
 
-function getJsonLd(post: BlogPost) {
-  const url = `https://primalfacilitiesmanagement.co.ke/blog/${post.slug}`;
+function getJsonLd(post: SanityPost) {
+  const url = `https://primalfacilitiesmanagement.co.ke/blog/${post.slug.current}`;
+  const image = post.heroImage?.asset
+    ? urlFor(post.heroImage).width(1200).height(630).url()
+    : undefined;
 
   return {
     "@context": "https://schema.org",
@@ -60,80 +79,113 @@ function getJsonLd(post: BlogPost) {
     datePublished: post.date,
     dateModified: post.date,
     url,
-    image: post.heroImage,
+    ...(image ? { image } : {}),
     author: {
       "@type": "Organization",
-      name: "Primal Facilities Management"
+      name: "Primal Facilities Management",
     },
     publisher: {
       "@type": "Organization",
-      name: "Primal Facilities Management"
-    }
+      name: "Primal Facilities Management",
+    },
   };
 }
 
-export default async function BlogPostPage(
-  { params }: { params: Promise<Params> }
-) {
+export default async function BlogPostPage({
+  params,
+}: {
+  params: Promise<Params>;
+}) {
   const { slug } = await params;
-  const post = getBlogPostBySlug(slug);
 
-  if (!post) {
-    notFound();
-  }
+  // Fetch the current post
+  const post = await sanityFetch<SanityPost | null>({
+    query: postBySlugQuery,
+    params: { slug },
+  });
+
+  if (!post) notFound();
+
+  // Fetch other posts for "More insights" section
+  const allPosts = await sanityFetch<SanityPost[]>({
+    query: allPostsQuery,
+  });
+  const morePosts = allPosts
+    .filter((p) => p.slug.current !== post.slug.current)
+    .slice(0, 3);
 
   const formattedDate = formatDate(post.date);
-  const jsonLd = getJsonLd(post!);
-
-  const morePosts = blogPosts
-    .filter((p) => p.slug !== post!.slug)
-    .slice(0, 3);
+  const jsonLd = getJsonLd(post);
 
   return (
     <main className="blog-single-page">
       {/* Breadcrumbs */}
-      <nav className="breadcrumbs" aria-label="Breadcrumb">
+      <nav className="blog-breadcrumbs" aria-label="Breadcrumb">
         <Link href="/">Home</Link>
         <span className="separator">/</span>
         <Link href="/blog">Blog</Link>
         <span className="separator">/</span>
-        <span>{post!.title}</span>
+        <span>{post.title}</span>
       </nav>
 
+      {/* Cover Image */}
+      {post.heroImage?.asset && (
+        <div className="blog-single-cover">
+          <Image
+            src={urlFor(post.heroImage)
+              .width(900)
+              .height(420)
+              .quality(80)
+              .auto("format")
+              .url()}
+            alt={post.heroImage.alt || post.title}
+            fill
+            priority
+            style={{ objectFit: "cover" }}
+            placeholder={
+              post.heroImage.asset.metadata?.lqip ? "blur" : "empty"
+            }
+            blurDataURL={post.heroImage.asset.metadata?.lqip}
+          />
+        </div>
+      )}
+
       {/* Article */}
-      <article className="blog-single-article">
-        <p className="blog-single-kicker">PRIMAL BLOG</p>
+      <article>
+        <h1 className="blog-title">{post.title}</h1>
 
-        <h1 className="blog-single-title">{post!.title}</h1>
+        {post.excerpt && (
+          <p className="blog-subtitle">{post.excerpt}</p>
+        )}
 
-        <div className="blog-single-meta-row">
+        <div className="blog-meta">
           <span>{formattedDate}</span>
-          <span>{post!.readTimeMinutes} min read</span>
+          <span>{post.readTimeMinutes ?? "—"} min read</span>
           <span>Nairobi, Kenya</span>
         </div>
 
-        <div className="blog-single-hero">
-          <Image
-            src={post!.heroImage}
-            alt={post!.title}
-            fill
-            className="hero-main-image"
-          />
+        {/* ✅ Portable Text body replaces the old post.body.map(para) */}
+        <div className="blog-content">
+          {post.body ? (
+            <PortableTextRenderer value={post.body} />
+          ) : (
+            <p style={{ color: "#6b7280", fontStyle: "italic" }}>
+              This article is being updated. Check back soon.
+            </p>
+          )}
         </div>
 
-        <div className="blog-single-body">
-          {post!.body.map((para, idx) => (
-            <p key={idx}>{para}</p>
-          ))}
-        </div>
+        {/* Tags */}
+        {post.tags && post.tags.length > 0 && (
+          <div className="blog-keywords">
+            {post.tags.map((tag) => (
+              <span key={tag}>{tag}</span>
+            ))}
+          </div>
+        )}
 
-        <div className="blog-single-tags">
-          {post!.tags.map((tag) => (
-            <span key={tag}>{tag}</span>
-          ))}
-        </div>
-
-        <div className="blog-single-footer-cta">
+        {/* CTA */}
+        <div className="blog-cta-box">
           Looking for professional support with{" "}
           <strong>machines, cold rooms or facilities in Nairobi?</strong>{" "}
           <Link href="/contact">Talk to the Primal team →</Link>
@@ -146,14 +198,14 @@ export default async function BlogPostPage(
           <h3>More facility management insights</h3>
           <div className="blog-more-grid">
             {morePosts.map((p) => (
-              <div key={p.slug} className="blog-more-card">
-                <Link href={`/blog/${p.slug}`}>
+              <div key={p._id} className="blog-more-card">
+                <Link href={`/blog/${p.slug.current}`}>
                   <div className="blog-card-meta-row">
                     <span className="blog-card-date">
                       {formatDate(p.date)}
                     </span>
                     <span className="blog-card-readtime">
-                      {p.readTimeMinutes} min read
+                      {p.readTimeMinutes ?? "—"} min read
                     </span>
                   </div>
                   <div className="blog-card-title">{p.title}</div>
@@ -167,9 +219,7 @@ export default async function BlogPostPage(
       {/* JSON-LD for SEO */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(jsonLd)
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
     </main>
   );

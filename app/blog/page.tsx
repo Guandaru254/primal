@@ -2,7 +2,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import "./blog.css";
-import { blogPosts } from "@/lib/blog";
+import { sanityFetch } from "@/sanity/lib/client";
+import { allPostsQuery } from "@/sanity/lib/queries";
+import type { SanityPost } from "@/types/blog";
 
 export const metadata: Metadata = {
   title: "Blog | Primal Facilities Management",
@@ -13,23 +15,21 @@ export const metadata: Metadata = {
     description:
       "Facility management tips, maintenance checklists and machine care guides for Kenyan homes, businesses and industries.",
     url: "https://primalfacilitiesmanagement.co.ke/blog",
-    type: "website"
-  }
+    type: "website",
+  },
 };
 
 function formatDate(dateStr: string) {
   return new Date(dateStr).toLocaleDateString("en-KE", {
     day: "numeric",
     month: "short",
-    year: "numeric"
+    year: "numeric",
   });
 }
 
-export default function BlogPage() {
-  const sorted = [...blogPosts].sort(
-    (a, b) =>
-      new Date(b.date).getTime() - new Date(a.date).getTime()
-  );
+export default async function BlogPage() {
+  // ✅ Fetches from Sanity instead of static lib/blog.ts
+  const sorted = await sanityFetch<SanityPost[]>({ query: allPostsQuery });
 
   return (
     <main className="blog-page">
@@ -39,7 +39,7 @@ export default function BlogPage() {
           <div className="blog-hero-text">
             <p className="blog-eyebrow">PRIMAL INSIGHTS</p>
             <h1 className="blog-hero-title">
-     <span>Facilities &amp; Maintenance Insights</span>
+              <span>Facilities &amp; Maintenance Insights</span>
             </h1>
             <p className="blog-hero-subtitle">
               Practical, Kenya-focused tips on washing machines, cold rooms,
@@ -60,12 +60,14 @@ export default function BlogPage() {
               <div>
                 <p className="blog-hero-meta-label">Updated</p>
                 <p className="blog-hero-meta-value">
-                  {formatDate(sorted[0].date)}
+                  {sorted.length > 0 ? formatDate(sorted[0].date) : "—"}
                 </p>
               </div>
               <div>
                 <p className="blog-hero-meta-label">Articles</p>
-                <p className="blog-hero-meta-value">{sorted.length}+ guides</p>
+                <p className="blog-hero-meta-value">
+                  {sorted.length}+ guides
+                </p>
               </div>
             </div>
           </div>
@@ -98,9 +100,9 @@ export default function BlogPage() {
 
         <div className="blog-list-grid">
           {sorted.map((post) => (
-            <article key={post.slug} className="blog-card">
+            <article key={post._id} className="blog-card">
               <Link
-                href={`/blog/${post.slug}`}
+                href={`/blog/${post.slug.current}`}
                 className="blog-card-link"
               >
                 <div className="blog-card-meta-row">
@@ -108,7 +110,7 @@ export default function BlogPage() {
                     {formatDate(post.date)}
                   </span>
                   <span className="blog-card-readtime">
-                    {post.readTimeMinutes} min read
+                    {post.readTimeMinutes ?? "—"} min read
                   </span>
                 </div>
 
@@ -116,7 +118,7 @@ export default function BlogPage() {
                 <p className="blog-card-excerpt">{post.excerpt}</p>
 
                 <div className="blog-card-tags">
-                  {post.tags.slice(0, 3).map((tag) => (
+                  {(post.tags ?? []).slice(0, 3).map((tag) => (
                     <span key={tag}>{tag}</span>
                   ))}
                 </div>
@@ -130,6 +132,18 @@ export default function BlogPage() {
             </article>
           ))}
         </div>
+
+        {sorted.length === 0 && (
+          <div style={{ textAlign: "center", padding: "60px 0" }}>
+            <p style={{ color: "#6b7280", fontSize: "16px" }}>
+              No articles published yet. Add your first post in{" "}
+              <Link href="/studio" style={{ color: "#2563eb" }}>
+                Sanity Studio
+              </Link>
+              .
+            </p>
+          </div>
+        )}
       </section>
     </main>
   );

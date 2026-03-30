@@ -16,9 +16,9 @@
 
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./app/*"],
-      "@/components/*": ["./app/components/*"],
-      "@/styles/*": ["./app/styles/*"]
+      "@/sanity/*": ["./sanity/*"],
+      "@/types/*": ["./types/*"],
+      "@/*": ["./app/*"]
     },
 
     "plugins": [
